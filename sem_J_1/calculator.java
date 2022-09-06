@@ -4,11 +4,15 @@ import java.util.Scanner;
 public class calculator {
 
     public static void main( String[] args ) {
+
+        
         
         Scanner iScanner = new Scanner(System.in, "cp866");
         
         
             boolean merker = false;
+            
+
             while (merker!=true){ 
                 System.out.println("Калькулятор");
                 System.out.println("Введите первое число");
@@ -37,9 +41,23 @@ public class calculator {
                 }
 
                 System.out.println("Желаете продолжить?");
-                String cont = iScanner.nextLine();
-                if (cont.toLowerCase().equals("нет")) merker = true;
+                boolean merker2 = true;
+                while(merker2){
+                    String cont = iScanner.nextLine();
+                    if (cont.toLowerCase().equals("нет")) 
+                    {
+                        merker = true;
+                        merker2 = false;
+                    }
+                    else if (cont.toLowerCase().equals("да")){
+                        merker = false;
+                        merker2 = false; 
+                    }
+                    else System.out.println("Введите корректный ответ:");
 
+                }
+                
+                
         }
 
 
